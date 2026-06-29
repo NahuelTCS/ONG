@@ -1,0 +1,567 @@
+/* RESET GENERAL Y ESTILOS BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #faf8f5;
+    color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    padding: 20px;   
+    margin: 0 auto;
+    width: 100%; 
+    max-width: 100%; 
+    flex: 1;
+    /* PROPIEDADES DE LA IMAGEN DE FONDO */
+    background-image: url('Img/donarfondo.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+/* NAVBAR HEADER */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: #1b5e20 2px solid;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu li a {
+    color: #555;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover, .nav-menu li a.active {
+    color: #2e7d32;
+}
+
+.nav-btn {
+    background-color: #2e7d32;
+    color: white !important;
+    border-radius: 5px;
+    padding: 8px 20px !important;
+    margin-left: 10px;
+}
+
+.nav-btn:hover {
+    background-color: #1b5e20;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* HERO SECTION */
+.hero-section, .landing-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) center/cover no-repeat;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    width: 60%;
+    margin: 40px auto 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section h1, .landing-hero h1 {
+    font-size: 2.5rem;
+    color: #1b5e20;
+    margin-bottom: 20px;
+}
+
+.hero-section p, .landing-hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #e2725b;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c55d47;
+}
+
+/* CAROUSEL / SLIDESHOW */
+.carousel-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+;
+}
+
+.carousel-section h2 {
+background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) center/cover no-repeat;
+    border-radius: 12px;            
+    padding: 10px 50px;                    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+    margin-top: 40px;
+    margin-bottom: 40px;                 
+    width: 50%;                       
+    text-align: center;
+}
+
+/* Contenedor exterior que bloquea el tamaño máximo */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ancho fijo para el sistema del carrusel */
+    margin: 0 auto;
+}
+
+/* El contenedor de las imágenes tiene un alto y ancho estrictos */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 450px; /* ALTO TOTALMENTE FIJO: No cambiará jamás */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Las diapositivas heredan el 100% exacto del contenedor rígido */
+.carousel-slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+/* object-fit corta la foto para rellenar los 450px fijos sin deformarla */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta perfectamente excedentes sin alterar proporciones */
+    object-position: center;
+    display: block;
+}
+
+/* BOTONES: Ahora toman como referencia a .carousel-wrapper */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.85);
+}
+
+/* Posición fija e inamovible a los lados del marco */
+.prev { left: -25px; } /* Quedan ligeramente salidos del carrusel, muy elegante */
+.next { right: -25px; }
+
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 20px;
+    border-radius: 8px;
+    width: 70%;
+    box-sizing: border-box;
+    
+    /* CAMBIOS NUEVOS: */
+    text-decoration: none; /* Elimina el subrayado clásico de los enlaces */
+    display: block;        /* Asegura que ocupe correctamente su caja */
+    transition: background-color 0.3s ease; /* Transición suave para el efecto hover */
+    /* pointer-events: none;  <-- ELIMINADA para permitir los clics */
+}
+
+/* EFECTO HOVER: Un toque opcional para que el usuario note que es cliqueable */
+.carousel-text:hover {
+    background-color: rgba(0, 0, 0, 0.75); /* Se oscurece un poco al pasar el cursor */
+}
+/* ABOUT SECTION PAGE */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) center/cover no-repeat;
+    border-radius: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.page-header h1 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.about-grid {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 20px 0;
+}
+
+.about-card {
+    display: table-cell;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    vertical-align: top;
+}
+
+.about-card h2 {
+    color: #e2725b;
+    margin-bottom: 15px;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-content: space-around; 
+    min-height: 40vh;           
+    width: 100%;
+    gap: 30px;       
+    margin-top: 20px;
+}
+
+.blog-post {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 350px;
+    
+    /* FUERZA A QUE TODAS LAS TARJETAS MIDAN LO MISMO DE ALTO */
+    display: flex;
+    flex-direction: column;
+    justify-content: relative;
+    
+    transition: transform 0.3s ease;
+}
+
+/* NUEVO: Esto obliga al texto a ocupar el espacio restante uniformemente */
+.post-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+/* Asegura que si un párrafo es más corto, el diseño no se rompa */
+.post-content p {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+/* DIMENSIONES ESTRICTAS Y ANTI-DISTORSIÓN PARA LAS IMÁGENES */
+.post-img {
+    width: 100%;        /* Ocupa el 100% del ancho de la tarjeta (350px) */
+    height: 220px;       /* Altura fija idéntica para todos los cuadros */
+    object-fit: cover;   /* RECORTA la imagen proporcionalmente (Cero distorsión) */
+    object-position: center; /* Centra el enfoque de la foto */
+    display: block;
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.blog-post h2 {
+    margin: 10px 0;
+    color: #2e7d32;
+}
+
+/* FORM STYLING */
+.form-section {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.styled-form .form-group {
+    margin-bottom: 20px;
+}
+
+.styled-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.styled-form input, .styled-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.btn-submit {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.feedback-msg {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* DONATION BOX & TABS */
+.donation-box {
+    background-color: white;
+    max-width: 500px;
+    margin: 30px auto 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.tab-btn.active {
+    background: #e2725b;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.direct-action {
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Celular y pantallas pequeñas */
+@media (max-width: 600px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        border-bottom: #1b5e20 5px solid;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-menu li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-btn {
+        margin-left: 0;
+        display: inline-block;
+    }
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    .about-grid {
+        display: block;
+    }
+    .about-card {
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+/* Tablets y pantallas medianas */
+@media (min-width: 600px) and (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .about-grid {
+        display: flex;
+        gap: 20px;
+    }
+    .about-card {
+        display: block;
+        flex: 1;
+    }
+}
+/* Contenedor en cuadrícula para alinear las tarjetas */
+.about-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Diseño de cada tarjeta individuales (Misión y Visión) */
+.about-card {
+    background-color: rgba(255, 255, 255, 0.92); /* Fondo blanco limpio con ligera transparencia */
+    border-top: 5px solid #2e7d32; /* Línea verde característica de la ONG arriba */
+    border-radius: 10px;
+    padding: 35px 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Sombra suave para dar profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto interactivo sutil al pasar el mouse por encima */
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos de los títulos internos (Misión / Visión) */
+.about-card h2 {
+    color: #2e7d32;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Pequeño subrayado decorativo debajo de los títulos */
+.about-card h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 40px;
+    height: 3px;
+    background-color: #e2725b; 
+    border-radius: 2px;
+}
+
+/* Estilos para el texto de los párrafos descriptivos */
+.about-card p {
+    color: #455a64;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: justify;
+}

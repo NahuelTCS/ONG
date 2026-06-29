@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - EcoFuturo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌱 EcoFuturo</a>
+            <button class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+                <li><a href="que-hacemos.html">¿Qué hacemos?</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="donar.html" class="nav-btn">Donar</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section class="form-section">
+            <h1>Ponte en Contacto</h1>
+            <p>¿Tienes dudas, propuestas o quieres formar parte activa? Escríbenos.</p>
+            <form id="contactForm" class="styled-form">
+                <ul style="list-style: none; margin: 10px;">
+                    <li class="form-group">
+                        <input type="text" id="name" required placeholder="Nombre Completo">
+                    </li>
+                    
+                    <li class="form-group">
+                        <input type="email" id="email" required placeholder="Correo Electrónico (tu@email.com)">
+                    </li>
+                    
+                    <li class="form-group">
+                        <textarea id="message" rows="5" required placeholder="Escribe tu consulta aquí..."></textarea>
+                    </li>
+                    
+                    <li>
+                        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                    </li>
+                </ul>
+            </form>
+            <div id="formFeedback" class="feedback-msg"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 EcoFuturo. Todos los derechos reservados.</p>
+            <p>Diseñado con pasión por el planeta.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unirse y Donar - EcoFuturo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌱 EcoFuturo</a>
+            <button class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+                <li><a href="que-hacemos.html">¿Qué hacemos?</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="donar.html" class="active nav-btn">Donar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="landing-hero">
+            <h1>Tu ayuda cambia realidades</h1>
+            <p>Cada pequeña donación o suscripción financia la replantación de nuevos árboles y ayuda en la logística para nuestras brigadas ecológicas mundiales.</p>
+            
+            <div class="donation-box">
+                <h2>Elige tu forma de apoyar</h2>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('donar-tab')">Donación Única</button>
+                    <button class="tab-btn" onclick="switchTab('sub-tab')">Suscripción Mensual</button>
+                </div>
+                
+                <div id="donar-tab" class="tab-content active">
+                    <p>Donación directa</p>
+                    <p> Calcula el impacto de tu ayuda:</p>
+                    
+                    <div class="calculadora-ong" style="text-align: left;">
+                        <div class="form-group" style="margin-bottom: 15px;">
+                            <label for="montoDonacion" style="font-weight: 600; font-size: 0.9rem;">Monto a Donar ($ ARS):</label>
+                            <input type="number" id="montoDonacion" placeholder="Ingresá un monto, ej: 10000" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                        </div>
+                        <button id="calcularImpacto" class="btn-submit" style="background-color: #e2725b; margin-bottom: 15px;">Calcular Impacto</button>
+                        
+                        <p id="resultadoImpacto" style="font-weight: bold; color: #2e7d32; min-height: 20px; font-size: 0.95rem; margin-bottom: 15px; text-align: center;"></p>
+                    </div>
+
+                    <button class="btn-primary direct-action" id="hacerDonacion">Hacer Donación</button>
+                </div>
+
+                <div id="sub-tab" class="tab-content">
+                    <p>Conviértete en guardián recurrente del planeta.</p>
+                    <button class="btn-primary direct-action" onclick="processPayment('Suscripción Mensual')">Suscribirse por $5/mes</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container"><p>&copy; 2026 EcoFuturo. Todos los derechos reservados.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

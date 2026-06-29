@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG EcoFuturo - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+</head>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌱 EcoFuturo</a>
+            <button class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="about.html">Acerca de</a></li>
+                <li><a href="que-hacemos.html">¿Qué hacemos?</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="donar.html" class="nav-btn">Donar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <h1>Por un futuro más verde y sostenible</h1>
+            <p>Trabajamos día a día para proteger la biodiversidad y combatir el cambio climático a través de acciones locales de gran impacto.</p>
+            <a href="donar.html" class="btn-primary">Súmate como Voluntario</a>
+        </section>
+<section class="carousel-section">
+    <h2>Nuestra Labor</h2>
+    
+    <!-- Este nuevo wrapper mantendrá los botones y el carrusel unidos y fijos -->
+    <div class="carousel-wrapper">
+        
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="Img/MONTE.JPG" alt="Reforestación">
+                <a href="que-hacemos.html" class="carousel-text">
+                    <h3>Reforestación Comunitaria</h3>
+                    <p>Plantando el futuro de nuestras comunidades.</p>
+                </a>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="Img/limpieza.jpg" alt="Limpieza Océanos">
+                <a href="que-hacemos.html" class="carousel-text">
+                    <h3>Limpieza de Océanos</h3>
+                    <p>Protegiendo la vida marina y nuestras costas.</p>
+                </a>
+            </div>
+            
+            <div class="carousel-slide">
+                <img src="Img/educacion.webp" alt="Educación">
+                <a href="que-hacemos.html" class="carousel-text">
+                    <h3>Educación Ambiental</h3>
+                    <p>Sembrando conciencia en las nuevas generaciones.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Los botones quedan FUERA de las imágenes, pero DENTRO del wrapper fijo -->
+        <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+        <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+        
+    </div>
+</section>
+</main>
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 EcoFuturo. Todos los derechos reservados.</p>
+            <p>Diseñado con pasión por el planeta.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
